@@ -1342,6 +1342,7 @@ footer {
     max-height: 80vh;
     padding: 50px;
     padding-top: 20px;
+    align-items: center;
 }
 
 .solid-divider {
