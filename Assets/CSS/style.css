@@ -1,0 +1,2112 @@
+@import url(https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap%27);
+
+/* CSS-variabler */
+:root {
+    --redColor: #EE2D2D;
+    --earlBlack: #1F1B1C;
+    --whiteColor: #FFFFFF;
+    --lightGrayColor: #BEBEBE;
+    --mediumGrayColor: #7F7F7F;
+    --darkGrayColor: #3F3F3F;
+    --smSpacer: 1rem;
+    --mdSpacer: 2rem;
+    --mlSpacer: 3rem;
+    --lgSpacer: 4rem;
+}
+
+/* Reset og styling til det grundlæggende */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    line-height: 150%;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--earlBlack);
+    margin: 0;
+}
+
+/* Typografisk skala */
+h1 {
+    font-size: 36px;
+    color: var(--whiteColor);
+}
+
+h2 {
+    font-size: 32px;
+    color: var(--whiteColor);
+}
+
+h3 {
+    font-size: 30px;
+    color: var(--whiteColor);
+}
+
+p,
+a,
+li,
+span,
+div {
+    font-size: 16px;
+    color: var(--whiteColor);
+}
+
+p {
+    margin-bottom: var(--mdSpacer);
+    font-weight: 300;
+}
+
+h1,
+h2,
+h3 {
+    margin-bottom: var(--mdSpacer);
+    text-transform: none;
+}
+
+/* Header-styling */
+.mainHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--smSpacer) var(--mdSpacer);
+    background-color: var(--earlBlack);
+    color: var(--whiteColor);
+    position: relative;
+    z-index: 1000;
+}
+
+/* Logo */
+.logoContainer {
+    flex: 0 0 auto;
+}
+
+.logo {
+    max-height: 80px;
+    width: auto;
+    display: block;
+}
+
+/* Navigation */
+.mainNav {
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: center;
+}
+
+#navToggle:checked~.mainNav {
+    display: block;
+}
+
+.navList {
+    display: flex;
+    list-style: none;
+    gap: var(--mdSpacer);
+}
+
+.navList li {
+    position: relative;
+}
+
+.navLink {
+    text-decoration: none;
+    color: var(--whiteColor);
+    font-weight: 500;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.navLink:hover {
+    color: var(--lightGrayColor);
+}
+
+/* Dropdown-specifik styling */
+.chevron::after {
+    content: '▼';
+    font-size: 0.6em;
+    margin-left: 4px;
+    display: inline-block;
+    transition: transform 0.3s;
+}
+
+.navLink:hover .chevron::after {
+    transform: rotate(180deg);
+}
+
+/* Sociale ikoner */
+.socialIcons {
+    flex: 0 0 auto;
+    display: flex;
+    gap: var(--smSpacer);
+    align-items: center;
+}
+
+.socialLink {
+    color: var(--whiteColor);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+.socialLink:hover {
+    color: var(--lightGrayColor);
+}
+
+/* Navigation Controls */
+.navToggle {
+    display: none;
+}
+
+.navToggleLabel {
+    display: none;
+    cursor: pointer;
+    font-size: 2rem;
+    color: var(--whiteColor);
+    padding: 0.5rem;
+}
+
+/* Styling af dropdown-menu */
+.dropdown {
+    position: relative;
+}
+
+.dropdownContent {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--earlBlack);
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    list-style: none;
+    padding: 0.5rem 0;
+}
+
+.dropdownContent li {
+    padding: 0;
+}
+
+.dropdownLink {
+    color: var(--whiteColor);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.dropdownLink:hover {
+    background-color: var(--darkGrayColor);
+    color: var(--lightGrayColor);
+}
+
+.dropdown:hover .dropdownContent {
+    display: block;
+}
+
+/* Main Layout */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--mdSpacer);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Button komponent */
+.ctaButton {
+    display: inline-block;
+    background-color: var(--redColor);
+    color: var(--whiteColor);
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.ctaButton:hover {
+    background-color: #c02424;
+    display: inline-block;
+}
+
+.fullWidthBtn {
+    width: 100%;
+    text-align: center;
+}
+
+/* standard button */
+button {
+    padding: 10px 20px;
+    background: var(--redColor);
+    color: var(--whiteColor);
+    font-weight: 700;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+    width: 100%;
+}
+
+.heroImage {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    max-height: 80vh;
+}
+
+/* About Section */
+.aboutSection {
+    background-color: var(--earlBlack);
+    padding: var(--lgSpacer) 0;
+    position: relative;
+}
+
+.splitLayout {
+    display: flex;
+    align-items: center;
+    gap: var(--lgSpacer);
+}
+
+.textColumn {
+    flex: 1;
+}
+
+.imageColumn {
+    flex: 1;
+}
+
+.brushTransition {
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    line-height: 0;
+}
+
+.brushTransition img {
+    width: 100%;
+    height: auto;
+}
+
+/* Teams Section */
+.teamsSection {
+    background-color: var(--redColor);
+    padding: var(--lgSpacer) 0;
+    position: relative;
+    z-index: 1;
+}
+
+.cardGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--mdSpacer);
+    margin-top: var(--lgSpacer);
+}
+
+.teamCard {
+    background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.8));
+    background-color: var(--darkGrayColor);
+    height: 300px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.teamCard:hover {
+    transform: translateY(-5px);
+}
+
+.cardContent {
+    padding: var(--mdSpacer);
+    text-align: center;
+}
+
+/* Learn More Section */
+.learnMoreSection {
+    background-color: var(--darkGrayColor);
+    padding: var(--lgSpacer) 0;
+    color: var(--whiteColor);
+}
+
+.detailsGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--lgSpacer);
+    margin-top: var(--mdSpacer);
+}
+
+.detailCard img {
+    margin-bottom: var(--mdSpacer);
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.detailCard h3 {
+    margin-bottom: var(--smSpacer);
+}
+
+/* Budoregler side specifik styling */
+.budoIntroSection {
+    padding: var(--lgSpacer) var(--mdSpacer);
+}
+
+.pageTitle {
+    margin-bottom: var(--lgSpacer);
+}
+
+.introGrid {
+    display: flex;
+    gap: var(--lgSpacer);
+    align-items: flex-start;
+}
+
+.introText {
+    flex: 1;
+}
+
+.introText h2 {
+    color: var(--whiteColor);
+    margin-bottom: 2rem;
+    font-size: 20px;
+    font-weight: 300;
+    font-style: italic;
+    opacity: 0.7;
+}
+
+.introImage {
+    flex: 1;
+}
+
+.introImage img {
+    border-radius: 4px;
+}
+
+/* Accordion Styling */
+.accordionSection {
+    padding-bottom: var(--lgSpacer);
+    margin: 0 auto;
+}
+
+.accordionItem {
+    margin-bottom: var(--smSpacer);
+    overflow: hidden;
+}
+
+summary.accordionHeader {
+    width: 100%;
+    background-color: var(--redColor);
+    color: var(--whiteColor);
+    padding: 1rem 1.5rem;
+    text-align: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-family: inherit;
+    transition: background-color 0.3s ease;
+    list-style: none;
+}
+
+summary.accordionHeader::-webkit-details-marker {
+    display: none;
+}
+
+summary.accordionHeader:hover {
+    background-color: #c02424;
+}
+
+.accordionIcon {
+    font-size: 1rem;
+    transition: transform 0.3s ease;
+}
+
+details[open] .accordionIcon {
+    transform: rotate(180deg);
+}
+
+.accordionContent {
+    background-color: var(--darkGrayColor);
+}
+
+details[open] .accordionContent {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.contentInner {
+    padding: 1.5rem;
+    color: var(--whiteColor);
+}
+
+.contentInner ul {
+    list-style-position: inside;
+}
+
+.contentInner li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+/* Venskabsklubber side specifik styling */
+.clubSection {
+    padding-top: var(--lgSpacer);
+    padding-bottom: var(--lgSpacer);
+}
+
+.clubGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--mdSpacer);
+    margin-top: 0;
+}
+
+.clubCard {
+    background-color: #3F3F3F;
+    padding: 2.5rem;
+    border-radius: 2px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    height: 100%;
+}
+
+.clubCard h3 {
+    margin-bottom: 0;
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--whiteColor);
+}
+
+.clubLogoContainer {
+    background-color: var(--whiteColor);
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 1px;
+}
+
+.clubLogoContainer img {
+    max-height: 100%;
+    width: auto;
+    object-fit: contain;
+}
+
+/* Design af Bliv medlem siden */
+.BlivMedlem .container {
+    grid-template-columns: 1fr 1fr;
+    display: grid;
+    gap: var(--lgSpacer);
+    padding: var(--mdSpacer);
+    align-items: center;
+}
+
+.BlivMedlem .text1 {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+
+.BlivMedlem .text1 h1,
+.BlivMedlem .text1 p {
+    color: var(--whiteColor);
+    padding: var(--smSpacer);
+}
+
+.BlivMedlem .Kontakt {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    background-color: var(--darkGrayColor);
+    padding: var(--mdSpacer);
+}
+
+.BlivMedlem .Kontakt h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--whiteColor);
+}
+
+.BlivMedlem .Kontakt p {
+    color: var(--whiteColor);
+    font-weight: 300;
+}
+
+.BlivMedlem .Kontakt .UnderTekst {
+    font-size: 14px;
+    color: var(--whiteColor);
+    margin-bottom: var(--mdSpacer);
+    opacity: 0.8;
+}
+
+.BlivMedlem .Kontakt .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--smSpacer);
+}
+
+.BlivMedlem .Kontakt textarea {
+    grid-column: 1/3;
+}
+
+.BlivMedlem .Kontakt input,
+.BlivMedlem .Kontakt textarea {
+    width: 100%;
+    padding: var(--smSpacer);
+    border: none;
+}
+
+.BlivMedlem .Kontakt .adresse {
+    grid-column: 1 / -1;
+}
+
+.BlivMedlem .Kontakt .info {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: auto auto 1fr;
+    align-items: center;
+    gap: var(--smSpacer);
+}
+
+.BlivMedlem .Kontakt button {
+    padding: 10px 20px;
+    background: var(--redColor);
+    color: var(--whiteColor);
+    border-radius: 6px;
+    border: none;
+}
+
+.BlivMedlem .priser {
+    background-image: url(../img/Effektbillede.png);
+    background-size: 1400px auto;
+    background-position: left;
+    background-position-x: -13rem;
+    background-repeat: no-repeat;
+    color: var(--whiteColor);
+    background-color: var(--redColor);
+    padding: 3rem;
+    margin-top: var(--lgSpacer);
+}
+
+.BlivMedlem .priser h2 {
+    padding-bottom: var(--mdSpacer);
+}
+
+.BlivMedlem .priser p {
+    font-weight: 300;
+    max-width: 500px;
+}
+
+.BlivMedlem .Hvorfor {
+    margin-top: var(--lgSpacer);
+    padding: 3rem;
+    display: flex;
+    gap: var(--lgSpacer);
+}
+
+.BlivMedlem .Hvorfor .hvorforTekst h2 {
+    color: var(--whiteColor);
+    padding-bottom: var(--mdSpacer);
+}
+
+.BlivMedlem .Hvorfor .hvorforTekst p {
+    color: var(--whiteColor);
+    font-weight: 300;
+    max-width: 500px;
+}
+
+.BlivMedlem .Kort h2 {
+    padding-left: 3rem;
+    color: var(--whiteColor);
+}
+
+.BlivMedlem .Kort iframe {
+    margin-top: var(--lgSpacer);
+    width: 100%;
+    height: 450px;
+    border: none;
+}
+
+/* Design af Om klubben-siden */
+.OmKlubben .KlubInfo {
+    padding: var(--mlSpacer);
+    padding-top: var(--lgSpacer);
+    color: var(--whiteColor);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--lgSpacer);
+    padding-bottom: 10rem;
+    align-items: start;
+}
+
+.OmKlubben .KlubInfo .KlubText {
+    grid-column: 1/2;
+    max-width: 500px;
+    padding-top: var(--lgSpacer);
+}
+
+.OmKlubben .KlubInfo .KlubText h1 {
+    margin-bottom: var(--mdSpacer);
+}
+
+.OmKlubben .KlubInfo .KlubText p {
+    font-weight: 300;
+    margin-bottom: var(--smSpacer);
+}
+
+.OmKlubben .KlubInfo .KlubText .Spm {
+    opacity: 0.8;
+}
+
+.OmKlubben .KlubInfo .KlubText button {
+    padding: 10px 100px;
+    background: var(--redColor);
+    color: var(--whiteColor);
+    font-weight: 700;
+    border-radius: 6px;
+    border: none;
+}
+
+.OmKlubben .KlubInfo img {
+    grid-column: 2/3;
+    margin-top: var(--lgSpacer);
+}
+
+.OmKlubben .DanRang {
+    background-color: var(--redColor);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: var(--mlSpacer);
+    place-items: center;
+}
+
+.OmKlubben .DanRang h2 {
+    color: var(--whiteColor);
+    padding-bottom: 3rem;
+    margin-top: var(--lgSpacer);
+    grid-column: span 3;
+}
+
+.OmKlubben .DanRang .Lie {
+    grid-column: 1 / 2;
+}
+
+.OmKlubben .DanRang .Anders {
+    grid-column: 2/ 3;
+}
+
+.OmKlubben .DanRang .Morten {
+    grid-column: 3 / 4;
+}
+
+.OmKlubben .DanRang img {
+    /* object-fit: cover; */
+    max-width: auto;
+}
+
+.OmKlubben .DanRang p {
+    text-align: left;
+    color: var(--whiteColor);
+    font-weight: 600;
+}
+
+/* Om Jiu-Jitsu */
+
+button {
+    padding: 10px 100px;
+    font-weight: 700;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}
+
+.jjinfo button {
+    background: var(--redColor);
+    color: var(--whiteColor);
+}
+
+.klubbenslove button {
+    background: var(--lightGrayColor);
+    color: var(--earlBlack);
+}
+
+.beltred button {
+    background: var(--darkGrayColor);
+    color: var(--whiteColor);
+}
+
+.cardjjhistorie button,
+.cardbudoregler button {
+    background: var(--redColor);
+    color: var(--whiteColor);
+    padding: 10px 200px;
+}
+
+/* jiu-jitsu info */
+.jjinfo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--lgSpacer);
+    padding: var(--lgSpacer) var(--mlSpacer) 10rem var(--mlSpacer);
+    color: var(--whiteColor);
+}
+
+.omjj {
+    grid-column: 1 / 2;
+    max-width: 500px;
+}
+
+.omjj h1 {
+    margin-bottom: var(--mdSpacer);
+}
+
+.omjj p {
+    font-weight: 300;
+    margin-bottom: var(--smSpacer);
+}
+
+.jjinfo img {
+    grid-column: 2 / 3;
+    width: 100%;
+    max-width: 500px;
+    height: 400px;
+    object-fit: contain;
+    display: block;
+}
+
+.ctaButton-JiuJitsu {
+    display: inline-block;
+    background-color: var(--darkGrayColor);
+    color: var(--whiteColor);
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.ctaButton-JiuJitsu:hover {
+    background-color: var(--mediumGrayColor);
+    display: inline-block;
+}
+
+/* Bælte og graduering */
+.beltandgrad {
+    padding: var(--lgSpacer) var(--mlSpacer);
+    background-color: var(--redColor);
+}
+
+.beltred {
+    max-width: 500px;
+}
+
+.beltred h2 {
+    margin-bottom: var(--mdSpacer);
+}
+
+.beltred p {
+    font-weight: 300;
+    color: var(--whiteColor);
+    margin-bottom: var(--smSpacer);
+}
+
+/* Cards  */
+.cardsjj-historie {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--lgSpacer);
+    padding: var(--mlSpacer);
+    margin-top: var(--lgSpacer);
+}
+
+.cardsjjhistorie-knap-billede {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.cardjjhistorie,
+.cardbudoregler {
+    padding: var(--lgSpacer);
+    overflow: hidden;
+}
+
+.cardjjhistorie {
+    background-color: var(--darkGrayColor);
+}
+
+.cardbudoregler {
+    background-color: var(--mediumGrayColor);
+}
+
+.cardjjhistorie h2,
+.cardbudoregler h2 {
+    padding-bottom: var(--smSpacer);
+    color: var(--whiteColor);
+}
+
+.cardjjhistorie img,
+.cardbudoregler img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    aspect-ratio: 4/3;
+    display: block;
+    margin-bottom: var(--smSpacer);
+}
+
+
+.jjhistorie {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--lgSpacer);
+    padding: var(--lgSpacer) var(--mlSpacer);
+}
+
+.overskrift,
+h1 {
+    font-size: 42px;
+    margin-bottom: var(--mdSpacer);
+    margin-top: var(--mdSpacer);
+    color: var(--whiteColor);
+
+}
+
+.jjhistorie h3 {
+    font-size: 22px;
+    color: var(--redColor);
+    margin-bottom: var(--smSpacer);
+}
+
+.jjhistorie p {
+    line-height: 1.5;
+    color: var(--whiteColor);
+    padding-bottom: var(--mdSpacer);
+}
+
+.jjhistorie li {
+    margin-bottom: 6px;
+    color: var(--whiteColor);
+}
+
+/* samurai billede */
+.samurai {
+    display: flex;
+    justify-content: center;
+}
+
+.samurai img {
+    width: 70%;
+    max-width: 400px;
+    height: auto;
+    object-fit: contain;
+}
+
+.jjbutton {
+    background: var(--redColor);
+    color: var(--whiteColor);
+    margin: 3rem;
+}
+
+/* Fra samuraier til moderne kampsport */
+.fratil {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--lgSpacer);
+    padding: var(--lgSpacer) var(--mlSpacer);
+}
+
+.fratil h2 {
+    grid-column: span 2;
+    font-size: 36px;
+    color: var(--whiteColor);
+    margin-bottom: var(--mdSpacer);
+}
+
+
+.fratil h3 {
+    font-size: 22px;
+    color: var(--redColor);
+    margin-bottom: var(--smSpacer);
+}
+
+.fratil p {
+    font-weight: 300;
+    line-height: 1.7;
+    color: var(--whiteColor);
+    margin-bottom: var(--smSpacer);
+}
+
+.fratil ul {
+    padding-left: 20px;
+    margin-top: 8px;
+}
+
+.fratil li {
+    margin-bottom: 6px;
+    color: var(--whiteColor);
+}
+
+/* Klubbens Historie start */
+.KlubbensHistorie {
+    margin-top: var(--lgSpacer);
+    background-image: url('../img/Effektbillede.png');
+    background-repeat: no-repeat;
+    background-size: 1500px auto;
+    background-position-x: -13rem;
+}
+
+.container1 {
+    padding: var(--mlSpacer);
+    display: flex;
+    gap: var(--lgSpacer);
+    align-items: flex-start;
+
+    .tekst1 {
+        h1 {
+            color: var(--whiteColor);
+            padding-bottom: var(--mdSpacer);
+        }
+
+        p {
+            color: var(--whiteColor);
+            font-weight: 300;
+            max-width: 500px;
+        }
+    }
+
+
+}
+
+.container2 {
+    padding: var(--mlSpacer);
+    margin-top: var(--lgSpacer);
+    display: flex;
+    gap: var(--lgSpacer);
+    align-items: flex-start;
+
+    .tekst2 {
+        h2 {
+            color: var(--whiteColor);
+            padding-bottom: var(--mdSpacer);
+
+        }
+
+        p {
+            color: var(--whiteColor);
+            font-weight: 300;
+            max-width: 500px;
+        }
+    }
+}
+
+.figur {
+    background-color: var(--redColor);
+    padding: var(--mlSpacer);
+    display: flex;
+    gap: 20rem;
+    align-items: center;
+
+
+
+
+    .Tosenryu {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: var(--lgSpacer);
+
+        img {
+            max-width: 100%;
+            object-fit: fill;
+        }
+
+        p {
+            color: var(--whiteColor);
+            font-weight: 300;
+            max-width: 500px;
+        }
+    }
+
+    .maskot {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+
+        p {
+            color: var(--whiteColor);
+            font-weight: 300;
+
+        }
+    }
+
+
+
+}
+
+
+
+/* Klubbens Historie slut */
+
+/* bæltefarve & graduering */
+.graduering-page {
+    background-color: var(--earlBlack);
+}
+
+.graduering-hero {
+    width: 100%;
+}
+
+.graduering-hero .hero-img {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: cover;
+    display: block;
+}
+
+.graduering-container {
+    display: flex;
+    gap: var(--lgSpacer);
+    padding-top: var(--lgSpacer);
+    padding-bottom: var(--lgSpacer);
+    align-items: flex-start;
+}
+
+.graduering-text {
+    flex: 1;
+}
+
+.graduering-text h1 {
+    margin-bottom: var(--mdSpacer);
+}
+
+.graduering-text p {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.graduering-images {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--mdSpacer);
+}
+
+.graduering-images img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.beltred .jjinfo {
+    background-color: var(--redColor);
+}
+
+.cardsjj {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: var(--mdSpacer);
+    padding: var(--lgSpacer) var(--mlSpacer);
+}
+
+.cardjj {
+    background-color: var(--darkGrayColor);
+    padding: 2rem;
+    text-align: center;
+    border-radius: 6px;
+    border: 1px solid transparent;
+    transition: 0.3s;
+}
+
+.cardjj:hover {
+    border: 1px solid var(--whiteColor);
+}
+
+.cardjj img {
+    margin-bottom: var(--mdSpacer);
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.cardjj h2 {
+    font-size: 24px;
+    margin-bottom: var(--smSpacer);
+}
+
+/* Arrangementer Start */
+.arrangementer-main {
+    margin: 30px;
+}
+
+.arrangementer-intro-tekst {
+    color: var(--whiteColor);
+    width: 50ch;
+}
+
+.slogan {
+    color: var(--lightGrayColor);
+    font-style: italic;
+}
+
+.arrangementer-cards h2,
+p {
+    color: var(--whiteColor);
+}
+
+.arrangementer-cards {
+    display: grid;
+    grid-template-areas:
+        'arrangement-card-1 arrangement-card-2'
+        'arrangement-card-3';
+    gap: 30px;
+}
+
+.arrangement-card {
+    background-color: var(--darkGrayColor);
+    display: flex;
+    flex-direction: column;
+    width: 50ch;
+    padding: 20px;
+    padding-top: 0px;
+    border-radius: 8px;
+    height: fit-content;
+}
+
+.uldum-card-text p {
+    margin: 0;
+    gap: 0;
+}
+
+.uldum-card-text {
+    margin-bottom: 16px;
+}
+
+.arrangement-card img {
+    /* width: fit-content; */
+    align-self: center;
+}
+
+.chikara-billede {
+    width: 440px;
+    align-self: center;
+}
+
+.chikara-billede-samling {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.arrangement-card-billede-og-knap {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+
+/* Arrangementer Slut */
+
+/* Kontakt Page */
+.kontakt-intro-tekst {
+    color: var(--whiteColor);
+    max-width: 600px;
+    margin: 0 auto var(--mdSpacer) auto;
+    padding: 0 var(--smSpacer);
+}
+
+.kontakt-boks {
+    background-color: var(--mediumGrayColor);
+    padding-left: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: grid;
+    grid-template-areas: 'kontakt-boks-1 kontakt-boks-2';
+    place-items: center;
+}
+
+.kontakt-boks-input {
+    grid-area: kontakt-boks-1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 35vw;
+}
+
+.kontakt-boks-elementer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.kontakt-boks h2 {
+    color: var(--whiteColor);
+}
+
+.kontakt-boks-input-felt {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--earlBlack);
+    border: none;
+    border-radius: 4px;
+    height: 35px;
+    text-align: center;
+}
+
+.skriv-her {
+    height: 150px;
+}
+
+.kontakt-boks-knap {
+    border-radius: 8px;
+    height: 40px;
+    width: 15vw;
+    align-self: center;
+    background-color: var(--redColor);
+    color: var(--whiteColor);
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    border: none;
+}
+
+.kontakt-boks-knap:hover {
+    transform: scale(1.05);
+    transition: 0.2s;
+}
+
+.kontakt-boks-knap a {
+    text-decoration: none;
+    color: var(--whiteColor);
+}
+
+.kontakt-boks-map {
+    grid-area: kontakt-boks-2;
+    height: 400px;
+    width: 500px;
+    border: 0;
+}
+
+.kontakt-map h3 {
+    color: var(--whiteColor);
+}
+
+/* Footer Desktop */
+footer {
+    background-color: var(--earlBlack);
+    display: flex;
+    justify-content: space-between;
+    max-height: 80vh;
+    padding: 50px;
+    padding-top: 20px;
+}
+
+.solid-divider {
+    border-top: 3px solid var(--whiteColor);
+}
+
+.footer-logo-og-social {
+    color: var(--whiteColor);
+}
+
+.footer-logo {
+    width: 200px;
+}
+
+.footer-social {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.footer-tekst {
+    width: 35vw;
+    display: grid;
+    grid-template-areas:
+        'Om-os FAQ Kontakt-os'
+    ;
+    color: var(--whiteColor);
+    gap: 20%;
+}
+
+.footer-social h5 {
+    margin-bottom: 0px;
+}
+
+.footer-social-ikoner {
+    display: flex;
+    gap: 20px;
+}
+
+footer h5 {
+    font-size: var(--smSpacer);
+}
+
+.footer-tekst a {
+    text-decoration: none;
+    color: var(--whiteColor);
+}
+
+.footer-map {
+    margin: var(--smSpacer);
+    color: var(--whiteColor);
+    text-align: center;
+}
+
+.footer-map iframe {
+    width: 200px;
+    height: 200px;
+}
+
+/* Klubbens love */
+.klubbenslove p {
+    padding: var(--smSpacer);
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--whiteColor);
+}
+
+.loveh1 {
+    font-size: 36px;
+    color: var(--whiteColor);
+    margin-top: 16px;
+    margin-left: 3rem;
+}
+
+details {
+    padding: 8px;
+}
+
+summary {
+    cursor: pointer;
+    font-weight: 600;
+    margin-top: 16px;
+    font-size: 18px;
+    color: var(--whiteColor);
+    line-height: 1.5;
+}
+
+.red-box {
+    background-color: var(--redColor);
+    margin-left: var(--mdSpacer);
+    margin-right: var(--mdSpacer);
+    line-height: 1.5;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    padding-left: 8px;
+}
+
+.love {
+    margin-left: var(--mdSpacer);
+    margin-right: var(--mdSpacer);
+    background-color: var(--mediumGrayColor);
+    line-height: 1.5;
+    padding: 8px;
+    color: var(--whiteColor);
+}
+
+/* Om Jiu-Jitsu Info */
+.jjinfo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--lgSpacer);
+}
+
+/* Historie - Samurai og tekst */
+.jjhistorie {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--lgSpacer);
+    padding: var(--lgSpacer) var(--mlSpacer);
+    color: var(--whiteColor);
+}
+
+.overskrift {
+    margin-left: 3.5rem;
+}
+
+.jjhistorie p {
+    max-width: 600px;
+}
+
+.samurai img {
+    width: 600px;
+}
+
+/* Fra / Til */
+.fratil {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: var(--lgSpacer) var(--mlSpacer);
+    color: var(--whiteColor);
+    gap: var(--lgSpacer);
+}
+
+.fratil ul {
+    padding-left: 20px;
+    margin-top: 8px;
+}
+
+.jjbutton a {
+    text-decoration: none;
+}
+
+.fratil li {
+    margin-bottom: 6px;
+    color: var(--whiteColor);
+}
+
+.MobilFooter {
+    color: var(--whiteColor);
+
+
+    .tekstFooter {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: var(--mlSpacer);
+        gap: var(--lgSpacer);
+
+
+
+        .links p {
+            padding: var(--smSpacer);
+        }
+
+        .links a {
+            display: flex;
+            color: var(--whiteColor);
+            text-decoration: none;
+            padding: var(--smSpacer)
+        }
+
+
+        img {
+            max-height: 100px;
+            width: auto;
+        }
+    }
+}
+
+/* TRÆNING START */
+
+/* ========= TRÆNING GENERELT ========= */
+
+.allealdre {
+    margin-top: var(--smSpacer);
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+
+/* ========= TRÆNINGS KNAPPER ========= */
+
+.omtraeningmain button {
+    padding: 10px 100px;
+    font-weight: 700;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    background: var(--redColor);
+    color: var(--whiteColor);
+}
+
+.stedogtilmelding button {
+    padding: 10px 100px;
+    font-weight: 700;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    background: var(--darkGrayColor);
+    color: var(--whiteColor);
+}
+
+.omtræning-knap {
+    background: var(--darkGrayColor);
+}
+
+/* ========= TRÆNINGSINFO ========= */
+
+.traeninginfo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--lgSpacer);
+    padding: var(--lgSpacer) var(--mlSpacer) 10rem var(--mlSpacer);
+    color: var(--whiteColor);
+}
+
+.traeninginfo img {
+    width: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+/* ========= TRÆNING STED OG TILMELDING ========= */
+
+.stedogtilmelding {
+    padding: var(--lgSpacer) var(--mlSpacer);
+    background-color: var(--redColor);
+    display: flex;
+    gap: var(--lgSpacer);
+
+}
+
+.redstedogtilmelding {
+    max-width: 600px;
+    color: var(--whiteColor);
+}
+
+.redstedogtilmelding h2 {
+    margin-bottom: var(--mdSpacer);
+}
+
+.redstedogtilmelding p {
+    margin-bottom: var(--smSpacer);
+}
+
+/* ========= CARDS – OM TRÆNING ========= */
+
+.cardsomtraening {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--lgSpacer);
+    margin-top: var(--lgSpacer);
+}
+
+/* --- TRÆNING Card: Udstyr og dragter --- */
+
+.cardudstyrogdragter {
+    padding: var(--lgSpacer);
+    color: var(--whiteColor);
+}
+
+.cardudstyrogdragter h2 {
+    margin-bottom: var(--smSpacer);
+}
+
+.cardudstyrogdragter img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    margin-bottom: var(--smSpacer);
+}
+
+.cardudstyrogdragter p {
+    font-weight: 300;
+    margin-bottom: var(--smSpacer);
+}
+
+/* --- TRÆNING Card: Klubbens ånd --- */
+
+.klubbensaand {
+    padding: var(--lgSpacer);
+    color: var(--whiteColor);
+}
+
+.klubbensaand h2 {
+    margin-bottom: var(--smSpacer);
+}
+
+.klubbensaand img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    margin-bottom: var(--smSpacer);
+}
+
+.klubbensaand p {
+    margin-bottom: var(--smSpacer);
+}
+
+/* ========= TRÆNING AFSLUTTENDE CTA ========= */
+
+.nogetfordig {
+    padding: var(--lgSpacer);
+    background-color: var(--darkGrayColor);
+}
+
+.nogetfordig h2 {
+    margin-bottom: var(--smSpacer);
+}
+
+.nogetfordig h3 {
+    margin-top: var(--mdSpacer);
+    font-size: 20px;
+}
+
+.nogetfordig p {
+    margin-bottom: var(--mdSpacer);
+}
+
+/* TRÆNING SLUT */
+
+
+
+/* ========================================= */
+/* MEDIA QUERIES - RESPONSIVT DESIGN         */
+/* ========================================= */
+
+/* Stor skærm (min-width: 1600px) - Arrangementer cards layout */
+@media (min-width:1600px) {
+    .arrangementer-cards {
+        grid-template-areas:
+            'arrangement-card-1 arrangement-card-2 arrangement-card-3';
+    }
+}
+
+/* Mellem skærm (max-width: 1600px) - Arrangementer cards */
+@media (max-width:1600px) {
+    .arrangementer-cards {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Laptop/Tablet Landscape (max-width: 1024px) */
+@media (max-width: 1024px) {
+
+    /* Cards på Jiu-Jitsu sider går i én kolonne */
+    .cardsjj {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Tablet/Mellem skærm (max-width: 992px) */
+@media (max-width: 992px) {
+
+    /* Venskabsklubber grid justering */
+    .clubGrid {
+        gap: 1.5rem;
+    }
+}
+
+/* Mobil/Tablet Portrait (max-width: 768px) */
+/* Dette er det primære breakpoint for mobilvisning */
+@media (max-width: 768px) {
+
+    /* Navigation / Header - Skifter til burgermenu */
+    .mainHeader {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .navToggleLabel {
+        display: block;
+    }
+
+    .mainNav {
+        display: none;
+        width: 100%;
+        margin-top: var(--smSpacer);
+        background-color: var(--earlBlack);
+    }
+
+    #navToggle:checked~.mainNav {
+        display: block;
+    }
+
+    .navList {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: 0;
+    }
+
+    .navList li {
+        width: 100%;
+        text-align: center;
+        border-top: 1px solid var(--darkGrayColor);
+        opacity: 0;
+        animation: slideIn 0.5s ease forwards;
+    }
+
+    /* Animation delays for menupunkter */
+    .navList li:nth-child(1) {
+        animation-delay: 0.1s;
+    }
+
+    .navList li:nth-child(2) {
+        animation-delay: 0.2s;
+    }
+
+    .navList li:nth-child(3) {
+        animation-delay: 0.3s;
+    }
+
+    .navList li:nth-child(4) {
+        animation-delay: 0.4s;
+    }
+
+    .navList li:nth-child(5) {
+        animation-delay: 0.5s;
+    }
+
+    @keyframes slideIn {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .navLink {
+        padding: 1rem;
+        justify-content: center;
+    }
+
+    .dropdownContent {
+        position: static;
+        display: none;
+        background-color: var(--darkGrayColor);
+        box-shadow: none;
+        width: 100%;
+    }
+
+    .dropdown:hover .dropdownContent {
+        display: block;
+    }
+
+    .socialIcons {
+        display: none;
+    }
+
+
+    /* Generelle layouts (Split view -> Kolonne) */
+    .splitLayout {
+        flex-direction: column;
+    }
+
+    .detailsGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .textColumn {
+        order: 1;
+    }
+
+    .imageColumn {
+        order: 2;
+    }
+
+    /* Budoregler */
+    .introGrid {
+        flex-direction: column;
+    }
+
+    .introImage {
+        width: 100%;
+    }
+
+    /* Venskabsklubber */
+    .clubGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .clubLogoContainer {
+        height: 160px;
+    }
+
+    /* Bliv Medlem */
+    .BlivMedlem .container,
+    .BlivMedlem .Hvorfor {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .BlivMedlem .Hvorfor img {
+        max-width: 100%;
+    }
+
+    /* Om Klubben */
+    .OmKlubben .KlubInfo {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .OmKlubben .KlubInfo img {
+        display: none;
+    }
+
+    .OmKlubben .DanRang {
+        display: flex;
+        flex-direction: column;
+        gap: var(--mdSpacer);
+    }
+
+    /* Klubbens Historie - Sektioner */
+    .KlubbensHistorie .container1,
+    .KlubbensHistorie .container2,
+    .KlubbensHistorie .figur {
+        display: flex;
+        flex-direction: column;
+        gap: var(--mdSpacer);
+    }
+
+    .KlubbensHistorie .figur img {
+        max-width: 100%;
+    }
+
+    /* Klubbens Love */
+    .klubbenslove,
+    .klubbenslove p,
+    .loveh1,
+    .red-box,
+    .love {
+        margin-left: var(--smSpacer);
+        margin-right: var(--smSpacer);
+        padding: var(--smSpacer);
+    }
+
+    .loveh1 {
+        margin-left: var(--smSpacer);
+    }
+
+    .klubbensLove-knap {
+        margin: 24px;
+    }
+
+    /* Om Jiu-Jitsu Info */
+    .jjinfo {
+        grid-template-columns: 1fr;
+        padding: var(--mdSpacer);
+    }
+
+    .jjinfo img {
+        display: none;
+    }
+
+    .omjj {
+        max-width: 100%;
+    }
+
+    .omjj p {
+        max-width: 50ch;
+    }
+
+    .beltandgrad {
+        padding: var(--lgSpacer) var(--mdSpacer);
+    }
+
+    .cardsjj {
+        grid-template-columns: 1fr;
+        padding: var(--mdSpacer);
+    }
+
+    /* Historie - Samurai og tekst */
+    .jjhistorie,
+    .fratil {
+        grid-template-columns: 1fr;
+        gap: var(--mdSpacer);
+        padding: var(--mdSpacer);
+    }
+
+    .overskrift {
+        margin-left: 0.5rem;
+    }
+
+    .fratil h2 {
+        grid-column: 1;
+    }
+
+    .samurai img {
+        width: 90%;
+        max-width: 300px;
+    }
+
+    /* Om træningen */
+    .allealdre {
+        display:none;
+    }
+
+    /* Klubbens Historie Mobile Padding adjustment */
+    .KlubbensHistorie .container1,
+    .KlubbensHistorie .container2,
+    .KlubbensHistorie .figur {
+        padding: var(--smSpacer);
+    }
+
+    /* Footer Responsive */
+    footer {
+        flex-direction: column;
+        height: auto;
+        max-height: none;
+        padding: var(--mdSpacer);
+        gap: var(--mdSpacer);
+        align-items: center;
+    }
+
+    .footer-tekst {
+        width: 100%;
+        grid-template-areas:
+            'Om-os'
+            'FAQ'
+            'Kontakt-os';
+        grid-template-columns: 1fr;
+        gap: var(--mdSpacer);
+        text-align: center;
+    }
+
+    .footer-social {
+        align-items: center;
+    }
+
+    .footer-map iframe {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* Graduering Page Mobile Responsive */
+    .graduering-container {
+        flex-direction: column;
+    }
+    /* Om Træning */
+    .traeninginfo {
+        grid-template-columns: 1fr;
+
+    }
+
+    .traeninginfo img {
+        display: none;
+    }
+
+    .omtraeningmain button {
+        padding: 10px 50px;
+    }
+}
+
+/* Helt små skærme (max-width: 768px) */
+@media (max-width:768px) {
+
+    /* Arrangementer tilpasning */
+    .arrangementer-main {
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+
+    /* Skjul footer på meget små skærme */
+
+    .arrangementer-cards {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .arrangement-card {
+        max-width: 100%;
+    }
+
+    .arrangement-card img {
+        max-width: 340px;
+    }
+
+    .arrangementer-intro-tekst {
+        max-width: 40ch;
+        font-size: 90%;
+    }
+
+    .kontakt-boks-map {
+        width: 340px;
+        height: 340px;
+    }
+
+    .kontakt-boks {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .kontakt-boks-input {
+        width: 80vw;
+    }
+
+    .kontakt-boks-knap {
+        width: 60vw;
+    }
+}
+
+@media (max-width: 1024px) {
+    .cardsomtraening {
+        grid-template-columns: 1fr;
+    }
+
+    .omtraeningmain button {
+        padding: 10px 80px;
+    }
+}
+
+@media (max-width: 768px) {
+    .traeninginfo {
+        grid-template-columns: 1fr;
+
+    }
+
+    .traeninginfo img {
+        display: none;
+    }
+
+
+
+    .omtraeningmain button {
+        padding: 10px 50px;
+    }
+}
+
+@media (max-width: 600px) {
+    .omtraeningmain button {
+        padding: 10px 20px;
+    }
+
+    .imgstedogtilmelding {
+        display: none;
+    }
+
+    .redstedogtilmelding {
+        padding: var(--mdSpacer);
+    }
+}

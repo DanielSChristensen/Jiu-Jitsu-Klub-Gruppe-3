@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt os</title>
+    <link rel="stylesheet" href="./Assets/CSS/style.css">
+</head>
+
+<body>
+    <header class="mainHeader">
+        <div class="logoContainer">
+            <a href="index.html">
+                <img src="./assets/images/logo1.png" alt="Hjørring Jiu-Jitsu Klub Logo" class="logo" loading="lazy">
+            </a>
+        </div>
+        <!-- Giver en checkbox, der bliver brugt til at skjule og vise menuen -->
+        <input type="checkbox" id="navToggle" class="navToggle">
+        <label for="navToggle" class="navToggleLabel">
+            <i class="fa-solid fa-bars"></i>
+        </label>
+
+        <!-- navigation menu -->
+        <nav class="mainNav">
+            <ul class="navList">
+                <li><a href="Bliv_Medlem.html" class="navLink">Bliv medlem</a></li>
+                <li><a href="omtræning.html" class="navLink">Om træningen</a></li>
+                <li class="dropdown">
+                    <a href="Om_Klubben.html" class="navLink">Om klubben <span class="chevron"></span></a>
+                    <ul class="dropdownContent">
+                        <li><a href="Klubbens_Historie.html" class="dropdownLink">Klubbens Historie</a></li>
+                        <li><a href="klubbensLove.html" class="dropdownLink">Klubbens Love</a></li>
+                        <li><a href="venskabsKlubber.html" class="dropdownLink">Venskabsklubber</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="omjiujitsu.html" class="navLink">Om Jiu-Jitsu <span class="chevron"></span></a>
+                    <ul class="dropdownContent">
+                        <li><a href="baelteOgGraduering.html" class="dropdownLink">Bæltefarver & Gradueringer</a></li>
+                        <li><a href="jiuJitsuHistorie.html" class="dropdownLink">Jiu-Jitsus Historie</a></li>
+                        <li><a href="budoregler.html" class="dropdownLink">Budoregler</a></li>
+                    </ul>
+                </li>
+                <li><a href="arrangementer.html" class="navLink">Arrangementer</a></li>
+                <li><a href="kontakt.html" class="navLink">Kontakt</a></li>
+            </ul>
+        </nav>
+
+        <!-- social links -->
+        <div class="socialIcons">
+            <a href="https://www.facebook.com/profile.php?id=61553743003234" target="_blank" class="socialLink"
+                aria-label="Facebook">
+                <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="https://www.instagram.com/hjoerring_jiu_jitsu/" target="_blank" class="socialLink"
+                aria-label="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- Kontakt start -->
+    <main class="kontakt-main">
+        <article class="kontakt-intro-tekst">
+            <h1>
+                Kontakt os her
+            </h1>
+            <p>Hvis du har spørgsmål, eller ønsker at starte op, så kontakt os på dette nummer, eller igennem kontakt
+                boksen nedenunder!</p>
+            <p>Tlf: 8165 7220</p>
+        </article>
+        <div class="kontakt-boks">
+            <div class="kontakt-boks-elementer">
+                <h2>
+                    Kontakt boks
+                </h2>
+                <div class="kontakt-boks-input">
+                    <input type="navn" placeholder="Navn" class="kontakt-boks-input-felt">
+                    <input type="email" placeholder="Email" class="kontakt-boks-input-felt">
+                    <input type="input-boks" placeholder="Skriv her" class="kontakt-boks-input-felt skriv-her">
+                    <button class="kontakt-boks-knap"><a href="">Send</a></button>
+                </div>
+            </div>
+            <div class="kontakt-map">
+                <h3>Her finder du os:</h3>
+                <iframe class="kontakt-boks-map"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2145.9989791336207!2d9.976316113430466!3d57.46132047365474!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4648ce6efa2b04e5%3A0xcbc8d1e5f681ff40!2sHj%C3%B8rring%20Jiu-Jitsu%20Klub!5e0!3m2!1sen!2sdk!4v1768215741742!5m2!1sen!2sdk"
+                    style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+
+
+    </main>
+
+
+    <!-- Footer start -->
+    <footer>
+        <div class="footer-logo-og-social">
+            <img src="./Assets/img/LogoUb.png" class="footer-logo" alt="Hjørring Jiu-Jitsu og Judu Klub logo"
+                loading="lazy">
+        </div>
+        <div class="footer-tekst">
+            <article>
+                <h5>Om os</h5>
+                <a href="Om_Klubben.html">Læs mere om klubben</a>
+            </article>
+            <article>
+                <h5>Kontakt os</h5>
+                <p>Tlf: 8165 7220</p>
+            </article>
+            <article class="footer-social">
+                <h5>Sociale Medier</h5>
+                <div class="footer-social-ikoner">
+                    <a href="https://facebook.com/groups/484235388306687/" target="_blank"><img
+                            src="./Assets/img/facebook.png" alt="facebook logo" loading="lazy"></a>
+                    <a href="https://instagram.com/hjoerring_jiu_jitsu/" target="_blank"><img
+                            src="./Assets/img/instagram.png" alt="instagram logo" loading="lazy"></a>
+                </div>
+            </article>
+        </div>
+        <div class="footer-map">
+            <h5>Find os her</h5>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2145.9989791336207!2d9.976316113430466!3d57.46132047365474!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4648ce6efa2b04e5%3A0xcbc8d1e5f681ff40!2sHj%C3%B8rring%20Jiu-Jitsu%20Klub!5e0!3m2!1sen!2sdk!4v1768215741742!5m2!1sen!2sdk"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </footer>
+    <!-- Footer slut -->
+</body>
+
+</html>

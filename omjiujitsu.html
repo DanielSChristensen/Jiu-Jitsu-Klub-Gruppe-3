@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Om Jiu-Jitsu</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="./Assets/CSS/style.css">
+</head>
+
+<body>
+    <header class="mainHeader">
+        <div class="logoContainer">
+            <a href="index.html">
+                <img src="./assets/images/logo1.png" alt="Hjørring Jiu-Jitsu Klub Logo" class="logo" loading="lazy">
+            </a>
+        </div>
+        <!-- Giver en checkbox, der bliver brugt til at skjule og vise menuen -->
+        <input type="checkbox" id="navToggle" class="navToggle">
+        <label for="navToggle" class="navToggleLabel">
+            <i class="fa-solid fa-bars"></i>
+        </label>
+
+        <!-- navigation menu -->
+        <nav class="mainNav">
+            <ul class="navList">
+                <li><a href="Bliv_Medlem.html" class="navLink">Bliv medlem</a></li>
+                <li><a href="omtræning.html" class="navLink">Om træningen</a></li>
+                <li class="dropdown">
+                    <a href="Om_Klubben.html" class="navLink">Om klubben <span class="chevron"></span></a>
+                    <ul class="dropdownContent">
+                        <li><a href="Klubbens_Historie.html" class="dropdownLink">Klubbens Historie</a></li>
+                        <li><a href="klubbensLove.html" class="dropdownLink">Klubbens Love</a></li>
+                        <li><a href="venskabsKlubber.html" class="dropdownLink">Venskabsklubber</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="omjiujitsu.html" class="navLink">Om Jiu-Jitsu <span class="chevron"></span></a>
+                    <ul class="dropdownContent">
+                        <li><a href="baelteOgGraduering.html" class="dropdownLink">Bæltefarver & Gradueringer</a></li>
+                        <li><a href="jiuJitsuHistorie.html" class="dropdownLink">Jiu-Jitsus Historie</a></li>
+                        <li><a href="budoregler.html" class="dropdownLink">Budoregler</a></li>
+                    </ul>
+                </li>
+                <li><a href="arrangementer.html" class="navLink">Arrangementer</a></li>
+                <li><a href="kontakt.html" class="navLink">Kontakt</a></li>
+            </ul>
+        </nav>
+
+        <!-- social links -->
+        <div class="socialIcons">
+            <a href="https://www.facebook.com/profile.php?id=61553743003234" target="_blank" class="socialLink"
+                aria-label="Facebook">
+                <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="https://www.instagram.com/hjoerring_jiu_jitsu/" target="_blank" class="socialLink"
+                aria-label="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+        </div>
+    </header>
+
+    <main class="omjiujitsu">
+
+
+        <section class="jjinfo">
+
+            <article class="omjj">
+                <h1>Om Jiu-Jitsu</h1>
+                <p>Hjørring Jiu-Jitsu Klub har siden 1953 været med til at skabe et positivt syn på Jiu-Jitsu. Vi sætter
+                    stor pris på vores gode klubmiljø og de gamle værdier, som stadig er en naturlig del af træningen i
+                    dag. Hos os handler Jiu-Jitsu ikke kun om teknik, men også om fællesskab, respekt og glæden ved at
+                    træne sammen.</p>
+                <p>Kunne du tænke dig at prøve Jiu-Jitsu?</p>
+                <a href="Bliv_Medlem.html" class="ctaButton">Tilmeld dig næste begynderhold!</a>
+            </article>
+            <img src="Assets/img/jjkompri.jpg" alt="Et billede af japanske tegn der symboliserer Jiu-Jitsu.">
+        </section>
+
+
+
+        <section class=" beltandgrad">
+            <article class="beltred">
+                <h2>Bæltefarver og graduering</h2>
+                <p>I Jiu-Jitsu bruger man bæltefarver til at vise sin progression i sporten. Man starter som begynder i
+                    Kyu-grader, og bevæger sig op mod Dan-grader som repræsenterer de højeste niveau.</p>
+                <p>
+                    Læs mere om hvad de forskellige farver betyder, og hvordan man opnår disse!
+                </p>
+                <a href="baelteOgGraduering.html" class="ctaButton-JiuJitsu">Undersøg bæltefarverne og graduering</a>
+            </article>
+        </section>
+
+        <section class="cardsjj-historie">
+            <section class="cardjjhistorie">
+                <h2>Jiu-Jitsuens historie</h2>
+                <div class="cardsjjhistorie-knap-billede">
+                <img src="Assets/img/hjjk1988kompricopyright700.jpg"
+                    alt="Et billede taget i 1988 af klubbens daværende medlemmer. Copyright Hjørring Jiu-Jitsu Klub">
+                <a href="jiuJitsuHistorie.html" class="ctaButton">Fordyb dig i Jiu-Jitsuens historie</a></div>
+            </section>
+            <section class="cardbudoregler">
+                <h2>Budoregler</h2>
+                <div class="cardsjjhistorie-knap-billede">
+                <img src="Assets/img/copyrightjjfight.jpg"
+                    alt="To mænd der udøver Jiu-Jitsu, den ene vender på hovedet i vejret. Copyright Hjørring Jiu-Jitsu Klub">
+                <a href="budoregler.html" class="ctaButton">Lær budoreglerne</a></div>
+            </section>
+        </section>
+    </main>
+</body>
+
+</html>
