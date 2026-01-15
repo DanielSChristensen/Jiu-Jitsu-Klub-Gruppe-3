@@ -74,7 +74,9 @@ h3 {
     padding: var(--smSpacer) var(--mdSpacer);
     background-color: var(--earlBlack);
     color: var(--whiteColor);
-    position: relative;
+    /* position: relative; */
+    position: sticky;
+    top: 0;
     z-index: 1000;
 }
 
@@ -1933,7 +1935,7 @@ summary {
         padding: var(--lgSpacer) var(--mdSpacer);
     }
 
-    .cardsjj {
+    .cardsjj-historie {
         grid-template-columns: 1fr;
         padding: var(--mdSpacer);
     }
