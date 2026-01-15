@@ -1213,7 +1213,6 @@ p {
     width: 50ch;
     padding: 20px;
     padding-top: 0px;
-    border-radius: 8px;
     height: fit-content;
 }
 
@@ -1702,6 +1701,7 @@ summary {
 @media (max-width:1600px) {
     .arrangementer-cards {
         grid-template-columns: 1fr 1fr;
+        place-items: center;
     }
 }
 
